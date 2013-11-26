@@ -1,0 +1,12 @@
+Con txt2tex.R aplicado a un conjunto de ficheros txt (correos de la
+organizacion) se obtienen varios .tex para ser incluidos en LibroResumenes.tex.
+También se puede emplear para crear la lista de autores (por ejemplo).
+
+Para compilar LibroResumenes.tex hay que ejecutar (en Emacs por defecto):
+1.- (Emacs) Latex
+    (en una shell) makeindex LibroResumenes
+2.- (Emacs) Index (hace indexado de autores), 
+    (en una shell) makeindex LibroResumenes
+3.- (en una shell) makeindex inst (hace indexado de instituciones)
+4.- (en una shell) sh chapterbib.sh (compone bibliografía para cada resumen)
+5.- (Emacs) Latex

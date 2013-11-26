@@ -1,0 +1,87 @@
+\documentclass[a4paper, 12pt]{memoir}
+
+\input{preambulo}
+
+\setcounter{tocdepth}{0}
+
+\renewcommand{\partname}{Parte}
+
+\begin{document}
+
+\frontmatter
+
+\begin{titlingpage}
+
+  \title{
+    \Large{Libro de Resúmenes}\\
+    \Huge{V Jornadas de Usuarios de R}\\
+    \vspace{15pt}
+    \Large{Centro de Arte y Tecnología ETOPIA, Zaragoza}\\
+    \large{12 y 13 de Diciembre de 2013}\\
+  }
+
+  \author{
+    Comités Organizador y Científico\\
+    \texttt{http://r-es.org/5j}}
+
+  \date{1 de Diciembre de 2013}
+
+  \maketitle
+
+
+\end{titlingpage}
+
+
+\input{Licencia}
+
+\cleardoublepage
+
+\tableofcontents
+
+\cleardoublepage
+
+\input{general}
+
+\mainmatter
+
+\renewcommand{\partname}{Sesión de Comunicaciones}
+
+\part[Sesión de Comunicaciones I]{}
+\label{part:comunicacionesI}
+
+\input{resumenesJueves}
+
+\part[Sesión de Comunicaciones II]{}
+\label{part:comunicacionesII}
+
+\input{resumenesViernes}
+
+
+
+\part{Talleres}
+\label{part:talleres}
+
+\chapter{Talleres Jueves}
+
+\input{talleresJueves}
+
+\chapter{Talleres Viernes}
+
+\input{talleresViernes}
+
+\backmatter
+
+
+\part{Autores e Instituciones}
+
+\pagestyle{index}
+
+\renewcommand{\indexname}{Índice de autores}
+
+\printindex
+
+\renewcommand{\indexname}{Índice de Instituciones}
+
+\printindex[inst]
+
+\end{document}

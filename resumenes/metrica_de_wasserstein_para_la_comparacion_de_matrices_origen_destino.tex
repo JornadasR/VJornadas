@@ -1,0 +1,22 @@
+\chapter{Métrica de Wasserstein para la comparación de matrices origen-destino}
+
+\chapterprecis{Aleix Ruiz de Villa, Jordi Casas, Martijn Breen\\TSS - Transport Simulation Systems\\RugBcn - Grupo de usuarios de R de Barcelona}
+
+\index{Ruiz de Villa, Aleix}
+\index{Casas, Jordi}
+\index{Breen, Martijn}
+
+\index[inst]{TSS - Transport Simulation Systems}
+\index[inst]{RugBcn - Grupo de usuarios de R de Barcelona}
+
+Las matrices origen-destino (OD) son un elemento básico en los estudios de tráfico. Dada una red de transporte (por ejemplo una autopista con sus vías secundarias), describen el número de viajes que se dan en un intervalo de tiempo, donde los orígenes y destinos pertenecen a un conjunto fijo de localizaciones, llamados centroides.
+
+El problema que abordamos aquí es el de comparar dos matrices OD. En un principio, se pueden ver las diferencias celda a celda. Sin embargo, esta comparación no recoge la topología del red. Es decir, dos centroides muy cercanos pueden tener viajes muy diferentes, debido por ejemplo a las perturbaciones del proceso de muestreo, pero en esencia ambas matrices recoger el mismo tipo de información.
+
+Para abordar dicho problema, utilizamos técnicas de transporte de masas, una rama teórica de las matemáticas, íntimamente relacionada con problemas de transporte. Dados dos pares od (o1,d1) y (o2,d2), definimos la distancia entre ellos, como el tiempo de transporte (calculado en base a la topología de la red) necesario para desplazarse de un origen al otro y volver del correspondiente destino: es decir d(o1,o2) + d(d2,d1). Bajo estas circumstancias, definimos (informalmente) la distancia entre matrices od, como el mínimo tiempo de desplazamiento para mover la masa total de la matriz (número total de viajes) od1 hasta od2 y luego devolverla. En transporte de masas, esta distancia es conocida como la distancia de Wasserstein. Este problema se resuelve mediante técnicas básicas de programación lineal.
+
+El principal interés de este método, es que creemos que se puede utilizar en otras áreas científicas como el estudio de movimientos demográficos o el estudio de redes de telecomunicaciones y que podría tener aplicaciones peculiares como la comparación de ofertas de vuelo de dos compañías aereas. Para ello desarrollamos un paquete en R, que permita fácilmente el cálculo de dicha distancia.
+
+%\bibliographystyle{plain}
+
+%\bibliography{resumenes/metrica_de_wasserstein_para_la_comparacion_de_matrices_origen_destino}

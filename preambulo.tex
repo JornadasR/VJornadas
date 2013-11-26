@@ -1,0 +1,107 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\pagestyle{Ruled}
+\usepackage{array}
+\usepackage{verbatim}
+\usepackage{prettyref}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage[spanish]{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\usepackage{mathpazo}%Letra palatino con fuentes para matemáticas
+
+
+%\usepackage{biblatex}
+%\usepackage{csquotes}
+
+\usepackage{amsfonts}
+
+\usepackage{memhfixc}
+\usepackage{mempatch}
+\raggedbottom
+\sloppybottom
+\clubpenalty=10000
+\widowpenalty=10000
+
+\newcommand{\HRule}{\rule{\linewidth}{0.7mm}}
+
+\pretitle{\vfill \begin{center} \HRule \par \bfseries \scshape \HUGE}
+\posttitle{\HRule \par\end{center}}
+
+\preauthor{\begin{center} \large \scshape}
+\postauthor{\par\end{center}}
+
+%\date{}
+\predate{\vfill \begin{center}\large\scshape}
+\postdate{\par\end{center}\vfill}
+
+
+
+\openany
+\chapterstyle{southall}
+
+\makepagestyle{index}
+    \makeheadrule{index}{\textwidth}{\normalrulethickness}
+    \makeevenhead{index}{\rightmark}{}{\leftmark}
+    \makeoddhead{index}{\rightmark}{}{\leftmark}
+    \makeevenfoot{index}{\thepage}{}{}
+    \makeoddfoot{index}{}{}{\thepage}
+
+\makeindex
+\makeindex[inst]
+
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    bookmarksnumbered=true,
+    bookmarksopen=false,
+    breaklinks=true,
+    backref=true,
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Libro de Resumenes}
+    pdfauthor={Comités Organizador y Científico}
+    pdfsubject={R},   % subject of the document
+    pdfcreator={AucTeX/Emacs},   % creator of the document
+    pdfproducer={LaTeX}, % producer of the document
+    pdfnewwindow=true,      % links in new window
+    pdfborder={0 0 0},
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=Brown,          % color of internal links
+    citecolor=BrickRed,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=Blue           % color of external links 
+}
+
+
+\usepackage[sectionbib]{chapterbib}
+\usepackage[plain, spanish, noabstract, sort, nonamereplace]{flexbib}
+\bibpunct{[}{]}{,}{n}{}{;} %comandos de natbib: separadores [], etc
+
+
+\newcommand{\com}[1]{%
+\begin{center}
+  \textsc{%
+    \href{http://r-es.org/tiki-download_file.php?fileId=#1}{Comunicación
+      (pdf)}}
+\end{center}
+}
+
+\newcommand{\taller}[1]{%
+\begin{center}
+  \textsc{%
+    \href{http://r-es.org/tiki-download_file.php?fileId=#1}{Material}}
+\end{center}
+}

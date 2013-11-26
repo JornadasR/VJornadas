@@ -1,0 +1,18 @@
+\chapter{Evaluación del uso de modelos mixtos para estimación de la tasa de paro con poca muestra}
+
+\chapterprecis{José Luis Cañadas Reche\\Técnico de Investigación en el Instituto de Estudios Sociales Avanzados (IESA-CSIC)}
+
+\index{Luis Cañadas Reche, José}
+
+\index[inst]{Técnico de Investigación en el Instituto de Estudios Sociales Avanzados (IESA-CSIC)}
+
+La EPA, a pesar de ser la mayor encuesta de España, no ofrece muestra suficiente para algunas desagregaciones, tal es el caso por ejemplo, si queremos estimar la tasa de paro de los hombres de 35 a 40 años residentes en Zaragoza y con estudios universitarios.
+
+El uso de modelos mixtos se ha utilizado tradicionalmente para modelar estructuras de covarianzas no contempladas por los modelos lineales tradicionales. Los modelos mixtos, sin embargo, también pueden ser utilizados para obtener unas estimaciones más precisas de las medias condicionales.
+
+Para comprobarlo, se utilizó R para comparar la estimación clásica con la obtenida mediante modelos mixtos. Se tomaron diversas 5 submuestras de la EPA de diferente tamaño. Se calculó la tasa de paro a nivel provincial mediante ambos métodos repitiendo el proceso 200 veces, obteniendo como medida de precisión el error absoluto medio. Los modelos mixtos dieron un menor EAM incluso para muestras inferiores al 5% de la encuesta.
+
+
+%\bibliographystyle{plain}
+
+%\bibliography{resumenes/evaluacion_del_uso_de_modelos_mixtos_para_estimacion_de_la_tasa_de_paro_con_poca_muestra}

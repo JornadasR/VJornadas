@@ -1,0 +1,38 @@
+\chapter{Categorización automática de contenidos web con R}
+
+\chapterprecis{Pedro Concejero, César García, Ana Armenta, Paulo Villegas, J. Gregorio Escalada, \\Telefónica Digital, Product Development and Innovation}
+
+\index{Concejero, Pedro}
+\index{García, César}
+\index{Armenta, Ana}
+\index{Villegas, Paulo}
+\index{Gregorio Escalada, J.}
+\index{, NA}
+
+\index[inst]{Telefónica Digital, Product Development and Innovation}
+
+Telefónica Digital – PDI ha desarrollado un diccionario de contenidos web tomando como base la jerarquía temática y las clasificaciones del Open Directory Project, también conocidas como DMoz –por directory.mozilla (http://www.dmoz.org/). Se trata de un proyecto colaborativo abierto y multilingüe, en el que editores voluntarios listan y categorizan enlaces a páginas web. Muchos creadores de contenidos web categorizan los mismos en dmoz con el fin de obtener una buena posición en los buscadores, pues muchos de ellos utilizan este directorio como semilla para realizar el crawling de Internet completo
+Dos limitaciones importantes de esta taxonomía son su cobertura limitada, esto es, el contenido que no ha sido clasificado en DMoz, y su estructura desbalanceada (la profundidad de la jerarquía y su densidad es muy variable por categorías). Resulta por tanto interesante plantearse un proceso que pueda proporcionar la categoría o clasificación de un contenido web de forma automática, tomando como input el texto completo obtenido de webs reales mediante un crawler, sobre un subconjunto más balanceado de la jerarquía del ODP. Esta presentación describirá el proceso completo que comienza con el análisis de logs representativos de navegación web de usuarios, con el objetivo de seleccionar las categorías más populares o significativas, para luego extraer automáticamente el contenido (texto) completo de las páginas webs asignadas a estas categorías. 
+La extracción de contenido web (crawl) se realizó mediante nutch (un módulo de apache), al que se le pasaron un total de 10658 dominios que tienen un número mínimo de visitas.  Sin embargo, no podemos extraer automáticamente el texto de todos los dominios que le pasemos, debido a errores tipo “Forbidden” (la web destino no permite la extracción de texto) o “Service unavailable” (el servidor web destino no funciona).  De hecho la selección final, esto es, dominios de los que dispondremos de texto completo (con profundidad 1) y de su categoría DMoz, se reduce a 4072. 
+Un proceso de identificación de idioma –mediante tecnología desarrollada por el grupo de Tecnología del Habla de Telefónica I+D- permite seleccionar cuáles de ellos se utilizarán, en principio castellano, catalán y gallego –filtrando por tanto inglés y euskera entre otros. La figura a continuación muestra el número de dominios finalmente disponible para entrenamiento por categoría DMOZ (imponiendo como requisito al menos 10 dominios por categoría), en total 2283 páginas correspondientes a 44 categorías, que sigue la típica  distribución de ley de potencia. Sitios web de noticias (periódicos pero también revistas y publicaciones electrónicas, portales y lugares de desarrollo web) son las categorías con mayor  número de dominios clasificados como pertenecientes a ellas en el diccionario DMOZ, seguidos por negocios, sitios de la Administración Pública y la categoría de automóvil.
+Este texto será después pre-procesado con la librería tm, y se utilizará la implementación del algoritmo de Porter de la librería SnowBall como stemmer. El objetivo es obtener una matriz de frecuencias de raíces de palabras, así como posiblemente bigramas, por categoría.
+Estas webs, o dominios, se dividen en un conjunto de entrenamiento y otro de test, de forma aleatoria, en proporción 80/20 respectivamente, para entrenar y validar clasificadores estadísticos.
+Los conjuntos creados se aplican a los algoritmos de clasificación incluidos en la librería RTextTools .RTextTools facilita además enormemente la medición de precisión y otros indicadores de rendimiento de cada uno de los algoritmos probados. La comunicación oral presentará todos los resultados obtenidos en este trabajo. 
+La lista a continuación muestra los resultados preliminares de dos de los algoritmos incluidos en RTextTools, sin que el texto haya sido tratado por el stemmer debido a problemas técnicos con la librería Snowball –que serán solucionados lo antes posible y sin duda antes de la conferencia. 
+Los algoritmos que no están en la lista es porque no son aplicables o han dado error en esta primera prueba (a menudo debido a desbordamiento de memoria). La lista muestra el tiempo necesario para el cómputo del modelo en un servidor MS-Windows Server 2003 x64, con procesador Quad-Core AMD Opteron y 30 GB de RAM, así como la precisión. Esta medida es, más concretamente, la proporción promedio (para todas las categorías) con la que el algoritmo predice que un dominio del conjunto de validación pertenece a la clase en la que realmente está clasificado. Esto es, proporción de clasificaciones correctas promediada para todo el conjunto de textos contenido en el conjunto de validación. 
+Support Vector Machines (SVM) – 48.43 segundos – 0.621 (proporción de aciertos promedio)
+Maximum Entropy (MAXENT) – 22.15 minutos – 0.714 (proporción de aciertos promedio)
+
+REFERENCIAS (en formato estándar):
+Feinerer, I. (2010). Introduction to the tm Package Text Mining in R, 1–7. Retrieved from http://cran.r-project.org/web/packages/tm/vignettes/tm.pdf
+Ingersoll, G. S., Morton, T. S., & Farris, A. L. (2013). Taming Text: How to find, organize and manipulate it. New York: Manning.
+Jurka, A. T. P., Collingwood, L., Boydstun, A. E., Gross-, E., & Atteveldt, W. Van. (2013). Package “ RTextTools .” Retrieved from http://cran.r-project.org/web/packages/RTextTools/RTextTools.pdf
+Jurka, T. P., Collingwood, L., Boydstun, A. E., Grossman, E., & Van, W. (2013). RTextTools : A Supervised Learning Package for Text Classification. The R Journal, 5, 6–12. Retrieved from http://journal.r-project.org/archive/2013-1/collingwood-jurka-boydstun-etal.pdf
+Qi, X., & Davison, B. D. (2009). Web Page Classification : Features and Algorithms ∗. ACM Computing Surveys, 41(June), 1–31. Retrieved from http://www.cse.lehigh.edu/~xiq204/pubs/classification-survey/LU-CSE-07-010.pdf
+Radovanovic, M., & Ivanovi, M. (2008). TEXT MINING : Bag-of-Words Document Representation Machine Learning with Textual Data. Novi Sad Journal of Mathematics, 38(3), 227–234.
+
+
+
+%\bibliographystyle{plain}
+
+%\bibliography{resumenes/categorizacion_automatica_de_contenidos_web_con_r}

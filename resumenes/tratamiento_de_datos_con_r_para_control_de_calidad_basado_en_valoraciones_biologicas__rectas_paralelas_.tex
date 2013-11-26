@@ -1,0 +1,25 @@
+\chapter{Tratamiento de datos con R para control de calidad basado en valoraciones biológicas. Rectas Paralelas.}
+
+\chapterprecis{FAUSTINO HUERTAS MUÑOZ, MARÍA VICTORIA COLLAZO LÓPEZ(1), GLORIA FRUTOS CABANILLAS(2)\\(1) AGENCIA ESPAÑOLA DE MEDICAMENTOS Y PRODUCTOS SANITARIOS (AEMPS).\\(2) DPTO. DE ESTADÍSTICA E INVESTIGACIÓN OPERATIVA. FACULTAD DE FARMACIA. UCM.}
+
+\index{HUERTAS MUÑOZ, FAUSTINO}
+\index{VICTORIA COLLAZO LÓPEZ(1), MARÍA}
+\index{FRUTOS CABANILLAS(2), GLORIA}
+
+\index[inst]{(1) AGENCIA ESPAÑOLA DE MEDICAMENTOS Y PRODUCTOS SANITARIOS (AEMPS).}
+\index[inst]{(2) DPTO. DE ESTADÍSTICA E INVESTIGACIÓN OPERATIVA. FACULTAD DE FARMACIA. UCM.}
+
+En el control rutinario de la actividad de sustancias de origen biológico en preparaciones farmacéuticas, como las enzimas, factores de coagulación, receptores celulares, antibióticos, etc. se utilizan métodos analíticos cuya interpretación puede basarse en modelos matemáticos como el de rectas paralelas, donde comparando las respuestas de un conjunto de preparaciones referencia de actividad conocida (Ps) con las de otro conjunto de preparaciones problema cuya actividad se pretende conocer (Pt), es posible obtener Ps/Pt = (βs – βt)/β, que representa a la relación entre las actividad de la referencia (Ps) y de la muestra problema (Pt) es igual a la diferencia entre las ordenadas en el origen βs y βt de las respectivas rectas, dividido por la pendiente de las rectas paralelas.
+
+En el laboratorio de Hemoderivados de la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) el estudio de rectas paralelas se realiza de acuerdo al programa informático Combistats®, elaborado y distribuido por el European Directorate for the Quality of Medicines (EDQM). El programa incluye el análisis del modelo de líneas paralelas, el modelo de razón de pendiente, etc.
+
+Como alternativa de cálculo es posible utilizar R con las funciones básicas como la de modelos lineales (lm) y análisis de varianza (aov), para conocer si los resultados medidos cumplen las condiciones exigibles de linealidad y paralelismo y, de esta forma, aplicar el modelo para calcular el resultado de la preparación problema (Pt) con los límites de confianza correspondientes.
+
+Fundamentalmente, la función lm() de R permite conocer si el conjunto formado por dos rectas, obtenidas cada una de ensayos independientes, se puede tratar con uno de los 3 casos o modelos posibles: Que sean parte de la misma recta, que sean dos rectas coincidentes en un punto o que sean rectas paralelas. El estudio mediante aov() confirma las conclusiones anteriores de lm y permite desglosar la varianza en un mayor número de elementos, y, como ocurre con el programa Combistats®, conocer si hay alguna limitación que invalide la aplicación del modelo.
+
+En la presente exposición se muestra el procedimiento aplicado con R y la comparación entre los resultados obtenidos mediante el uso de Combistats®.
+
+
+%\bibliographystyle{plain}
+
+%\bibliography{resumenes/tratamiento_de_datos_con_r_para_control_de_calidad_basado_en_valoraciones_biologicas__rectas_paralelas_}
