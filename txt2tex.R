@@ -120,7 +120,7 @@ listaPonenciasPorSesiones <- function(bd){
 }
                     
 
-setwd('~/Dropbox/VJornadas/')
+setwd('~/R/VJornadas/')
 
 bd <- read.csv('formulario-bd_9.csv')
 
