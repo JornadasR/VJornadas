@@ -1,16 +1,13 @@
 \chapter{Preprocesado de imágenes hiperespectrales en R}
 
-\chapterprecis{Rubén Urraca Valle, Borja Millán, Roberto Fernandez-Martinez, Andrés Sanz García\\TELEVITIS. Universidad de La Rioja, Spain\\TELEVITIS. Universidad de La Rioja, Spain\\Department of Mining and Metallurgical Engineering and Materials Science. University of Basque Country, Spain\\Division of Bioscience. University of Helsinki, Finland}
+\chapterprecis{Rubén Urraca Valle, Borja Millán, Roberto Fernandez Martinez, Andres Sanz Garcia\\TELEVITIS. Universidad de La Rioja, Spain,Department of Mining and Metallurgical Engineering and Materials Science. University of Basque Country, Spain,Division of Bioscience. University of Helsinki, Finland}
 
 \index{Urraca Valle, Rubén}
 \index{Millán, Borja}
-\index{Fernandez-Martinez, Roberto}
-\index{Sanz García, Andrés}
+\index{Fernandez Martinez, Roberto}
+\index{Sanz Garcia, Andres}
 
-\index[inst]{TELEVITIS. Universidad de La Rioja, Spain}
-\index[inst]{TELEVITIS. Universidad de La Rioja, Spain}
-\index[inst]{Department of Mining and Metallurgical Engineering and Materials Science. University of Basque Country, Spain}
-\index[inst]{Division of Bioscience. University of Helsinki, Finland}
+\index[inst]{TELEVITIS. Universidad de La Rioja, Spain,Department of Mining and Metallurgical Engineering and Materials Science. University of Basque Country, Spain,Division of Bioscience. University of Helsinki, Finland}
 
 En la actualidad, el desarrollo de los sensores hiperespectrales está abriendo numerosas líneas de investigación. Estos sensores, a diferencia de las cámaras convencionales, son capaces de recoger información en múltiples frecuencias dando lugar a la generación de espectros [1]. Con los espectros el número de datos disponible se multiplica, dando lugar a la aparición de cubos de datos. Sin embargo, un análisis apropiado de los mismos permite identificar diversas propiedades de los materiales. Esto ha propiciado que las técnicas hiperespectrales se estén extendiendo a numerosos campo, desde la medicina a la agricultura pasando por la biología.
 En esta comunicación se busca describir el proceso de importación y preprocesado de datos procedente de los sensores hiperespectrales a R dentro del sector agrícola. Para ello se trabajará con dos tipos de sensores: un sensor NIR puntual (microPHAZIR Analyzer), que genera un único espectro (vector de datos) y una cámara hiperescpectral que abarca tanto el rango NIR como el visible y genera un espectro por cada uno de los pixeles recogidos (cubo de datos). Los objetos tratados serán bayas de uva y hojas de diferentes variedades de cepa.
