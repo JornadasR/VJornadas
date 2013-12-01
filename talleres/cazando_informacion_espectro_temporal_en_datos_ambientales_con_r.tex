@@ -6,29 +6,29 @@
 
 \index[inst]{Instituto de Economía Pública y Dept. de Econometría y Estadística, Universidad del País Vasco}
 
-El análisis espectral de wavelet (AEW) vía la transformada continua de wavelet (TCW) es una herramienta muy poderosa para la búsqueda  de eventos periódicos, cuasi-periódicos y eventos cuya frecuencia cambia con el tiempo en series temporales ambientales (climatológicas,  meteorológicas, hidrológicas, ecológicas, etc.). El AEW es capaz de analizar series temporales no estacionarias (las ambientales suelen serlo), i.e., series cuyas propiedades estadísticas (primer y segundo momento) cambian con el tiempo, es capaz de analizar a la vez en el dominio del tiempo y de la frecuencia y dispone de pruebas de significación estadística. En este taller se presentarán los principios estadísticos necesarios para una adecuada utilización del AEW, tanto para el caso uni como para el bivariado y se enfocará en la interpretación de los resultados. EL AEW se llevará a cabo mediante la utilización de los paquetes R SOWAS (Maraun 2007) y biwavelet (Gouhier y Grinsted 2013). 
+El análisis espectral de wavelet (AEW) vía la transformada continua de wavelet (TCW) es una herramienta muy poderosa para la búsqueda  de eventos periódicos, cuasi-periódicos y eventos cuya frecuencia cambia con el tiempo en series temporales ambientales (climatológicas,  meteorológicas, hidrológicas, ecológicas, etc.). El AEW es capaz de analizar series temporales no estacionarias (las ambientales suelen serlo), i.e., series cuyas propiedades estadísticas (primer y segundo momento) cambian con el tiempo, es capaz de analizar a la vez en el dominio del tiempo y de la frecuencia y dispone de pruebas de significación estadística. En este taller se presentarán los principios estadísticos necesarios para una adecuada utilización del AEW, tanto para el caso uni como para el bivariado y se enfocará en la interpretación de los resultados. EL AEW se llevará a cabo mediante la utilización de los paquetes R SOWAS (Maraun 2007) y biwavelet (Gouhier y Grinsted 2013).
+
+\begin{itemize}\item Paquetes: 
 
 SOWAS: http://tocsy.pik-potsdam.de/wavelets/
-Biwavelet: http://cran.r-project.org/web/packages/biwavelet/index.html
-http://biwavelet.r-forge.r-project.org/
 
-
-Objetivo: 
+Biwavelet: http://biwavelet.r-forge.r-project.org/ 
+ \item Objetivo: 
 El objetivo principal de este taller es que la(o)s asistentes sean capaces de analizar sus propios datos ambientales (nótese que aunque  el taller se enfoca a este tipo de datos, también es posible analizar  otros tipos de datos, teniendo siempre presente las características de  los datos a estudio) utilizando análisis espectral de wavelet vía la  transformada continua (caso uni y bivariado) haciendo uso de los paquetes R SOWAS y biwavelet. Se invita a los asistentes del taller a traer sus propias series temporales ambientales. 
 
 
-Duración: 
+\item Duración: 
 Tiempo total: 2 horas 
 
-Especificaciones de software: paquetes SOWAS y biwavelet.
+\item Especificaciones de software: paquetes SOWAS y biwavelet.
 Tener instalado R ver. 2.14 (o superior), el paquete SOWAS (primero instale el paquete Rwave -está en CRAN- desde R y después instale desde fuentes el SOWAS, i.e., desde una terminal de GNU/Linux  R CMD INSTALL sowas\_0.93.tar.gz, también necesitará tener instalado el paquete stats) y el paquete R biwavelet -también está en CRAN. Si el taller es aceptado, las personas interesadas en asistir podrían contactarme previamente para la instalación, de todo modos se anexará un HOW TO para la instalación de los paquetes y de las series temporales que se usarán en el taller. 
 
 
-Conocimientos previos: 
+\item Conocimientos previos: 
 Saber vagamente lo que es una transformada de Fourier, conocimiento muy elemental de análisis  de series temporales, conocimientos básicos de R en línea de comandos. 
 
 
-Tabla de contenidos: 
+\item Tabla de contenidos: 
 
 1. Breve introducción de conceptos básicos (función wavelet, tipos de funciones wavelet, transformada continua de wavelet, análisis espectral caso uni y bi variado, Fourier vs. wavelet, sobre escalas,  octavas y voices, relación entre escalas y frecuencias).  
 
@@ -36,9 +36,7 @@ Tabla de contenidos:
 
 3. Estimación e interpretación del espectro wavelet caso uni variado (pruebas de significación estadística y ruido de fondo, poder espectral suavizado vs. crudo. Se presentarán algunos ejemplos de como estimar el espectro wavelet con series temporales ambientales reales, se enfocará en cómo utilizar las funciones que estiman el poder espectral -sobretodo como inicializar los parámetros de entrada-  y se analizarán de modo básico los resultados). 
 
-4. Estimación del espectro cruzado, la coherencia normalizada de wavelet y el desfase (caso bivariado) entre dos series temporales ambientales (pruebas de significación estadística SOWAS vs biwavelet, espectro cruzado vs coherencia normalizada, interpretación del desfase. Aplicaciones reales a series ambientales, se explicarán de manera breve como iniciar los principales parámetros de entrada de las funciones que se utilizarán para el análisis bivariado y se analizarán de modo básico los resultados). 
-
-
+4. Estimación del espectro cruzado, la coherencia normalizada de wavelet y el desfase (caso bivariado) entre dos series temporales ambientales (pruebas de significación estadística SOWAS vs biwavelet, espectro cruzado vs coherencia normalizada, interpretación del desfase. Aplicaciones reales a series ambientales, se explicarán de manera breve como iniciar los principales parámetros de entrada de las funciones que se utilizarán para el análisis bivariado y se analizarán de modo básico los resultados).\end{itemize}
 
 %\bibliographystyle{plain}
 
