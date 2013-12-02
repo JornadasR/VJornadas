@@ -40,7 +40,7 @@ csv2tex <- function(bd){
   resumen <- gsub('%%%', '\n', resumen)
 
   biblio <- as.character(bd[12])
-  biblio <- gsub('%%%', '\n', biblio)
+  biblio <- gsub('%%%', '\n\n', biblio)
   
 
   titulo <- paste('\\chapter{', titulo, '}', sep='')
@@ -56,6 +56,39 @@ csv2tex <- function(bd){
   
   bibliografia <- paste('%\\bibliography{', nombreFile, '}', sep='')
   bibstyle <- '%\\bibliographystyle{plain}'
+
+# added by Jorge: adds non bibtex bibliog.
+  if( exists("ADDBIBLIO") && ADDBIBLIO ) {
+    require(bibtex)
+    getTextBib <- function(x)
+    {
+      x <- iconv(x, 'UTF-8', 'ASCII//TRANSLIT')
+      x <- gsub("_","\\\\_",x)
+      x <- gsub("[{]","",x) 
+      x <- gsub("[}]","",x) 
+      x <- gsub("&","\\\\&",x) 
+      x
+    }
+    getBibtexBib <- function(x)
+    {
+      x <- gsub('%%%', '\n\n', x)
+      writeLines(x,"./abcde12345679poisde.txt")
+      kk <- read.bib("./abcde12345679poisde.txt") 
+      res <- ""
+      for( i in 1:length(kk) )
+        res <- paste( res,i,". ",gsub("_","",gsub("\n"," ",format(kk[[i]]))),
+                      "\n\n",sep="" )
+      system("rm -f abcde12345679poisde.txt")
+      iconv(res, 'UTF-8', 'ASCII//TRANSLIT')
+    }
+    bibSepStr <- "\\bigskip\\subsection*{Bibliografía}\n\n"
+    if( length(grep("\\S",biblio)) )
+      if( length(grep("[@].*[{]",biblio))==0 )
+        resumen <- paste(resumen,bibSepStr,getTextBib(biblio))
+      else
+        resumen <- paste(resumen,bibSepStr,getBibtexBib(biblio))
+  } 
+# end add
 
   txt <- paste(titulo,
                autor, autorIdx,
@@ -120,7 +153,9 @@ listaPonenciasPorSesiones <- function(bd){
 }
                     
 
-setwd('~/R/VJornadas/')
+# setwd('~/R/VJornadas/')
+ADDBIBLIO <- TRUE
+
 
 bd <- read.csv('formulario-bd_9.csv')
 
