@@ -17,7 +17,21 @@ La calibración de un modelo puede ser analizada gráficamente, funciones como v
 Una de las materias que ha recibido más atención últimamente en este campo es la creación de grupos de riesgo que faciliten la aplicación de los modelos predictivos  en la práctica clínica diaria. La construcción de estos grupos de riesgo se realiza a través de una selección de puntos de corte sobre las probabilidades que proporciona el modelo y está asociada a la aplicación de distintos tratamientos para al paciente en cada caso. Por ejemplo, si tenemos un único punto de corte, los pacientes pueden ser clasificados como de alto o bajo riesgo para probabilidades por encima o debajo de un cierto valor, y una consecuencia práctica es que podrían ser sometidos a cirugía o no dependiendo de si pertenecen al grupo de alto o bajo riesgo.  
 La selección de un punto de corte óptimo está asociada a unos valores deseados de sensibilidad, especificidad, valor predictivo positivo o valor predictivo negativo, todos estos parámetros pueden ser calculados con una librería como ROCR, y probablemente una tabla que nos informe de estos parámetros nos sirva para seleccionar un punto de corte.  En los últimos años, además han sido definidos otros parámetros como  el beneficio neto y las curvas de decisión que nos permiten comparar el beneficio de aplicar distintos modelos predictivos con una misma selección de puntos de corte y son calculables con la función dca de R.
 Aunque todos estos parámetros nos pueden llevar a seleccionar un buen punto de corte, esta selección se realiza en cierta manera a ciegas, perdiéndose el punto de vista clínico del problema. En este punto creemos que es fundamental el estudio de las funciones de densidad de las distintas poblaciones (sana/enferma) a estudio. La estimación de la densidad de probabilidad mediante funciones tipo kernel nos permite  un estudio gráfico del problema con R que nos guiará sobre cómo seleccionar el mejor punto de corte y que da una información clínica sobre la utilidad de los modelos predictivos.  
-En este trabajo  queremos ilustrar con ejemplos reales aplicados en oncología como el uso de las funciones de densidad estimadas mediante métodos tipo kernel nos guía en la selección de puntos de corte adecuados y nos informa de una manera clara de la utilidad clínica de los modelos predictivos.
+En este trabajo  queremos ilustrar con ejemplos reales aplicados en oncología como el uso de las funciones de densidad estimadas mediante métodos tipo kernel nos guía en la selección de puntos de corte adecuados y nos informa de una manera clara de la utilidad clínica de los modelos predictivos. \bigskip\subsection*{Bibliografía}
+
+ 1. Harrell FE Jr, Lee KL, Mark DB. Multivariable prognostic models: issues in developing models, evaluating assumptions and adequacy, and measuring and reducing errors. Stat Med. 1996. 15(4):361-387. 
+
+
+
+2. Liu X. Classification accuracy and cut point selection. Stat Med. 2012;31:2676-86.
+
+
+
+3. Vickers AJ, Elkin EB. Decision Curve Analysis: A Novel Method for Evaluating Prediction Models. Medical Decision Making. 2006. 26(6):565 -574. 
+
+
+
+
 
 %\bibliographystyle{plain}
 

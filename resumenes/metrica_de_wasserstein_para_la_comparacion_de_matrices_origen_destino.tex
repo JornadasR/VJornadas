@@ -15,7 +15,13 @@ El problema que abordamos aquí es el de comparar dos matrices OD. En un princip
 
 Para abordar dicho problema, utilizamos técnicas de transporte de masas, una rama teórica de las matemáticas, íntimamente relacionada con problemas de transporte. Dados dos pares od (o1,d1) y (o2,d2), definimos la distancia entre ellos, como el tiempo de transporte (calculado en base a la topología de la red) necesario para desplazarse de un origen al otro y volver del correspondiente destino: es decir d(o1,o2) + d(d2,d1). Bajo estas circumstancias, definimos (informalmente) la distancia entre matrices od, como el mínimo tiempo de desplazamiento para mover la masa total de la matriz (número total de viajes) od1 hasta od2 y luego devolverla. En transporte de masas, esta distancia es conocida como la distancia de Wasserstein. Este problema se resuelve mediante técnicas básicas de programación lineal.
 
-El principal interés de este método, es que creemos que se puede utilizar en otras áreas científicas como el estudio de movimientos demográficos o el estudio de redes de telecomunicaciones y que podría tener aplicaciones peculiares como la comparación de ofertas de vuelo de dos compañías aereas. Para ello desarrollamos un paquete en R, que permita fácilmente el cálculo de dicha distancia.
+El principal interés de este método, es que creemos que se puede utilizar en otras áreas científicas como el estudio de movimientos demográficos o el estudio de redes de telecomunicaciones y que podría tener aplicaciones peculiares como la comparación de ofertas de vuelo de dos compañías aereas. Para ello desarrollamos un paquete en R, que permita fácilmente el cálculo de dicha distancia. \bigskip\subsection*{Bibliografía}
+
+ 1. lp\_solve and Kjell Konis. (2013). lpSolveAPI: R Interface for lp\_solve version 5.5.2.0. R package version 5.5.2.0-8. http://CRAN.R-project.org/package=lpSolveAPI 
+
+
+
+2. Villani, C. (2003) Topics in optimal transportation. American Mathematical Society, Providence.
 
 %\bibliographystyle{plain}
 
